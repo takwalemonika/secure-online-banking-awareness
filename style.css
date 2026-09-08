@@ -1,0 +1,408 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #222;
+
+}
+
+
+/* HEADER */
+
+.app-header {
+
+    background: #1565c0;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 18px;
+
+}
+
+
+.app-header h1 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+}
+
+
+.app-header p {
+
+    margin: 6px;
+
+}
+
+
+/* SCREENS */
+
+.screen {
+
+    display: none;
+
+    min-height: calc(100vh - 100px);
+
+    padding: 20px;
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+
+.active {
+
+    display: block;
+
+}
+
+
+/* WELCOME */
+
+.welcome {
+
+    text-align: center;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* MENU */
+
+.menu {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.menu button {
+
+    background: white;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 25px 10px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+}
+
+
+.menu button:hover {
+
+    transform: scale(1.03);
+
+}
+
+
+.menu span {
+
+    display: block;
+
+    margin-top: 10px;
+
+}
+
+
+/* CARD */
+
+.card {
+
+    background: white;
+
+    padding: 20px;
+
+    margin: 15px 0;
+
+    border-radius: 15px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+}
+
+
+.card h3 {
+
+    color: #1565c0;
+
+}
+
+
+/* BACK BUTTON */
+
+.back {
+
+    border: none;
+
+    background: #e3eaf5;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* PRIMARY BUTTON */
+
+.primary {
+
+    background: #1565c0;
+
+    color: white;
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+
+}
+
+
+.primary:hover {
+
+    background: #0d47a1;
+
+}
+
+
+/* INPUT */
+
+input {
+
+    width: 100%;
+
+    padding: 13px;
+
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+
+}
+
+
+/* PASSWORD RESULT */
+
+#passwordResult {
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    padding: 10px;
+
+}
+
+
+/* ACTIVITIES */
+
+.question {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+.answer {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin: 10px 0;
+
+    background: #eaf2ff;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.answer:hover {
+
+    background: #dbeafe;
+
+}
+
+
+/* QUIZ */
+
+.quizWelcome {
+
+    background: white;
+
+    margin-top: 40px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+
+.quizBox {
+
+    background: white;
+
+    padding: 25px;
+
+    margin-top: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+
+.quizOption {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin: 12px 0;
+
+    background: #f2f6fc;
+
+    border: none;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.quizOption:hover {
+
+    background: #dbeafe;
+
+}
+
+
+.selected {
+
+    background: #bbdefb !important;
+
+}
+
+
+#nextButton {
+
+    display: none;
+
+}
+
+
+.backHome {
+
+    background: #eeeeee;
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+}
+
+
+.small {
+
+    font-size: 13px;
+
+    color: #666;
+
+}
+
+
+.emergencyCard {
+
+    border-left: 5px solid #d32f2f;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .menu {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
