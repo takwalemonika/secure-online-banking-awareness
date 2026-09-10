@@ -1,13 +1,12 @@
 {
   "name": "Secure Online Banking Awareness",
   "short_name": "Secure Banking",
-  "id": "/secure-online-banking-awareness/",
   "description": "Learn how to stay safe while using online banking through interactive lessons, activities, quizzes, and fraud awareness.",
-  "start_url": "/secure-online-banking-awareness/",
-  "scope": "/secure-online-banking-awareness/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#1768D5",
+  "background_color": "#ffffff",
+  "theme_color": "#1768d5",
   "icons": [
     {
       "src": "launchericon-192x192.png",
