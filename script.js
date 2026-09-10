@@ -1,4 +1,5 @@
 ```javascript
+alert("JavaScript is working!");
 
 
 /* =========================
