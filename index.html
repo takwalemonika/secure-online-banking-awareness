@@ -1,17 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Secure Banking Awareness</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
 
 </head>
 
@@ -19,7 +17,7 @@
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- ================= APP HEADER ================= -->
 
 <div class="app-header">
 
@@ -41,7 +39,7 @@
 
         <p>
             Learn how to protect yourself while using
-            online banking.
+            online banking and digital payments.
         </p>
 
     </div>
@@ -51,7 +49,7 @@
 
         <button onclick="showScreen('learn')">
             📚
-            <span>Learn Online Banking</span>
+            <span>Learn</span>
         </button>
 
 
@@ -67,15 +65,27 @@
         </button>
 
 
-        <button onclick="showScreen('activity')">
+        <button onclick="showScreen('activityMenu')">
             🎮
-            <span>Interactive Activities</span>
+            <span>Activities</span>
         </button>
 
 
         <button onclick="showScreen('quizMenu')">
             📝
             <span>Quiz</span>
+        </button>
+
+
+        <button onclick="showScreen('video')">
+            🎥
+            <span>Watch & Learn</span>
+        </button>
+
+
+        <button onclick="showScreen('dosDont')">
+            ✅❌
+            <span>Do & Don't</span>
         </button>
 
 
@@ -94,11 +104,8 @@
 
 <section id="learn" class="screen">
 
-    <button class="back"
-            onclick="showScreen('home')">
-
+    <button class="back" onclick="showScreen('home')">
         ← Back
-
     </button>
 
 
@@ -110,8 +117,8 @@
         <h3>What is Online Banking?</h3>
 
         <p>
-            Online banking allows you to access banking
-            services using the internet.
+            Online banking allows you to use banking
+            services through the internet.
         </p>
 
     </div>
@@ -131,7 +138,7 @@
 
     <div class="card">
 
-        <h3>Remember 🛡️</h3>
+        <h3>Stay Safe 🛡️</h3>
 
         <p>
             Always use the official website or official
@@ -144,15 +151,12 @@
 
 
 
-<!-- ================= PASSWORD ================= -->
+<!-- ================= PASSWORD SAFETY ================= -->
 
 <section id="password" class="screen">
 
-    <button class="back"
-            onclick="showScreen('home')">
-
+    <button class="back" onclick="showScreen('home')">
         ← Back
-
     </button>
 
 
@@ -164,7 +168,7 @@
         <h3>Why is a Password Important?</h3>
 
         <p>
-            Your password protects your bank account
+            Your password helps protect your account
             from unauthorized access.
         </p>
 
@@ -173,7 +177,7 @@
 
     <div class="card">
 
-        <h3>Avoid Easy Passwords ❌</h3>
+        <h3>❌ Avoid Easy Passwords</h3>
 
         <p>❌ password123</p>
         <p>❌ 12345678</p>
@@ -185,12 +189,28 @@
 
     <div class="card">
 
-        <h3>Use Memorable Words 💡</h3>
+        <h3>💡 Use a Memorable Passphrase</h3>
 
         <p>
-            Use several unrelated words that are easy
-            for you to remember.
+            Use several unrelated words that you can
+            remember.
         </p>
+
+        <p>
+            Example: Mango • River • Cloud
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>🔐 Add Variety</h3>
+
+        <p>🔠 Uppercase letters</p>
+        <p>🔡 Lowercase letters</p>
+        <p>🔢 Numbers</p>
+        <p>⭐ Special characters</p>
 
     </div>
 
@@ -205,11 +225,8 @@
             placeholder="Enter a practice password">
 
 
-        <button class="primary"
-                onclick="checkPassword()">
-
+        <button class="primary" onclick="checkPassword()">
             Check Strength
-
         </button>
 
 
@@ -217,19 +234,27 @@
 
     </div>
 
+
+    <div class="card">
+
+        <h3>Important Rules 🛡️</h3>
+
+        <p>🔒 Never share your password.</p>
+        <p>🔄 Use different passwords for important accounts.</p>
+        <p>👀 Do not save passwords on public computers.</p>
+
+    </div>
+
 </section>
 
 
 
-<!-- ================= SCAM ================= -->
+<!-- ================= SCAM AWARENESS ================= -->
 
 <section id="scam" class="screen">
 
-    <button class="back"
-            onclick="showScreen('home')">
-
+    <button class="back" onclick="showScreen('home')">
         ← Back
-
     </button>
 
 
@@ -241,7 +266,7 @@
         <h3>📱 OTP Scam</h3>
 
         <p>
-            Fraudsters may pretend to be bank employees
+            A fraudster may pretend to be a bank employee
             and ask for your OTP.
         </p>
 
@@ -255,8 +280,8 @@
         <h3>☎️ Fake Bank Calls</h3>
 
         <p>
-            Unknown callers may ask for confidential
-            banking information.
+            A caller may threaten that your account will
+            be blocked and ask for confidential information.
         </p>
 
     </div>
@@ -267,8 +292,25 @@
         <h3>🔗 Fake Links</h3>
 
         <p>
-            Do not click suspicious links received through
+            Fraudsters may send fake links through
             SMS, WhatsApp, or email.
+        </p>
+
+        <p>
+            Do not enter banking information on suspicious
+            websites.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>🎣 Phishing</h3>
+
+        <p>
+            Phishing uses fake messages or websites
+            to steal personal information.
         </p>
 
     </div>
@@ -277,37 +319,69 @@
 
 
 
-<!-- ================= ACTIVITIES ================= -->
+<!-- ================= ACTIVITIES MENU ================= -->
 
-<section id="activity" class="screen">
+<section id="activityMenu" class="screen">
 
-    <button class="back"
-            onclick="showScreen('home')">
-
+    <button class="back" onclick="showScreen('home')">
         ← Back
-
     </button>
 
 
     <h2>🎮 Interactive Activities</h2>
 
 
-    <!-- ACTIVITY 1 -->
+    <div class="menu activity-menu">
+
+        <button onclick="showScreen('spotScam')">
+            🚨
+            <span>Spot the Scam</span>
+        </button>
+
+
+        <button onclick="showScreen('dosDont')">
+            ✅❌
+            <span>Do or Don't</span>
+        </button>
+
+
+        <button onclick="showScreen('password')">
+            🔐
+            <span>Password Challenge</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SPOT THE SCAM ================= -->
+
+<section id="spotScam" class="screen">
+
+    <button class="back" onclick="showScreen('activityMenu')">
+        ← Back
+    </button>
+
+
+    <h2>🚨 Spot the Scam</h2>
+
 
     <div class="card">
 
-        <h3>⚠️ Activity 1: Spot the Scam</h3>
+        <h3>Situation 1</h3>
 
         <p class="question">
 
-            "Your bank account will be blocked today!
+            📩 "Your bank account will be blocked today!
             Click this link immediately and enter your OTP."
 
         </p>
 
 
         <button class="answer"
-                onclick="scamAnswer('safe')">
+            onclick="scamAnswer('safe')">
 
             ✅ Safe Message
 
@@ -315,7 +389,7 @@
 
 
         <button class="answer"
-                onclick="scamAnswer('scam')">
+            onclick="scamAnswer('scam')">
 
             🚨 This is a Scam
 
@@ -327,22 +401,22 @@
     </div>
 
 
-
-    <!-- ACTIVITY 2 -->
-
     <div class="card">
 
-        <h3>🔐 Activity 2: OTP Safety</h3>
+        <h3>Situation 2</h3>
 
         <p class="question">
 
-            Someone calls and asks for your OTP.
+            Someone calls and says:
+
+            "I am from your bank. Tell me your OTP
+            to verify your account."
 
         </p>
 
 
         <button class="answer"
-                onclick="otpAnswer('share')">
+            onclick="otpAnswer('share')">
 
             Share OTP
 
@@ -350,7 +424,7 @@
 
 
         <button class="answer"
-                onclick="otpAnswer('dontShare')">
+            onclick="otpAnswer('dontShare')">
 
             Do Not Share OTP
 
@@ -361,147 +435,156 @@
 
     </div>
 
+</section>
 
 
-    <!-- ACTIVITY 3 -->
 
-    <div class="card">
+<!-- ================= DO OR DON'T ================= -->
 
-        <h3>🔗 Activity 3: Safe Link or Fake?</h3>
+<section id="dosDont" class="screen">
 
-        <p class="question">
+    <button class="back" onclick="showScreen('home')">
+        ← Back
+    </button>
 
-            "Click www.bank-secure-login-free.xyz"
 
+    <div class="quizWelcome">
+
+        <h2>✅❌ Do or Don't Challenge</h2>
+
+        <p>
+            Read each situation and choose the correct action.
         </p>
 
 
-        <button class="answer"
-                onclick="linkAnswer('safe')">
+        <p id="doDontNumber"></p>
 
-            Safe Link
+
+        <div class="card">
+
+            <h3 id="doDontQuestion"></h3>
+
+
+            <button class="do-button"
+                onclick="answerDoDont('do')">
+
+                ✅ DO
+
+            </button>
+
+
+            <button class="dont-button"
+                onclick="answerDoDont('dont')">
+
+                ❌ DON'T
+
+            </button>
+
+
+            <div id="doDontResult"></div>
+
+        </div>
+
+
+        <button id="doDontNext"
+            class="primary"
+            onclick="nextDoDont()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DO OR DON'T RESULT ================= -->
+
+<section id="doDontFinal" class="screen">
+
+    <div class="quizWelcome">
+
+        <h2>🏆 Challenge Completed!</h2>
+
+
+        <h1 id="doDontScore"></h1>
+
+
+        <p id="doDontMessage"></p>
+
+
+        <button class="primary"
+            onclick="startDoDont()">
+
+            Try Again 🔄
 
         </button>
 
 
-        <button class="answer"
-                onclick="linkAnswer('fake')">
+        <button class="backHome"
+            onclick="showScreen('home')">
 
-            Suspicious / Fake Link
+            🏠 Go Home
 
         </button>
 
+    </div>
 
-        <div id="linkResult"></div>
+</section>
+
+
+
+<!-- ================= VIDEO ================= -->
+
+<section id="video" class="screen">
+
+    <button class="back" onclick="showScreen('home')">
+        ← Back
+    </button>
+
+
+    <h2>🎥 Watch & Learn</h2>
+
+
+    <div class="card">
+
+        <h3>Cyber Awareness on UPI Frauds</h3>
+
+        <p>
+            Watch this video to learn about UPI fraud
+            and online banking safety.
+        </p>
+
+
+        <div class="video-container">
+
+            <iframe
+                src="https://www.youtube.com/embed/vBH4nrJtKiI"
+                title="Cyber Awareness on UPI Frauds"
+                allowfullscreen>
+
+            </iframe>
+
+        </div>
 
     </div>
 
 
-
-    <!-- ACTIVITY 4 -->
-
     <div class="card">
 
-        <h3>📞 Activity 4: Bank Call Challenge</h3>
+        <h3>💡 What Did You Learn?</h3>
 
-        <p class="question">
+        <p>🔒 Never share your OTP, PIN, or password.</p>
 
-            "Tell me your card number and CVV!"
+        <p>📱 Use official banking applications.</p>
 
-        </p>
+        <p>🔗 Do not click suspicious links.</p>
 
-
-        <button class="answer"
-                onclick="callAnswer('share')">
-
-            Give Information
-
-        </button>
-
-
-        <button class="answer"
-                onclick="callAnswer('verify')">
-
-            Disconnect and Contact Bank
-
-        </button>
-
-
-        <div id="callResult"></div>
+        <p>☎️ Be careful of unknown callers.</p>
 
     </div>
-
-
-
-    <!-- ACTIVITY 5 -->
-
-    <div class="card">
-
-        <h3>💳 Activity 5: UPI Safety</h3>
-
-        <p class="question">
-
-            "Scan this QR code to receive ₹5,000."
-
-        </p>
-
-
-        <button class="answer"
-                onclick="upiAnswer('scan')">
-
-            Scan QR Code
-
-        </button>
-
-
-        <button class="answer"
-                onclick="upiAnswer('careful')">
-
-            Be Careful and Verify
-
-        </button>
-
-
-        <div id="upiResult"></div>
-
-    </div>
-
-
-
-    <!-- ACTIVITY 6 -->
-
-    <div class="card">
-
-        <h3>🛡️ Activity 6: True or False</h3>
-
-        <p class="question">
-
-            "It is safe to share your banking password
-            with your best friend."
-
-        </p>
-
-
-        <button class="answer"
-                onclick="trueFalseAnswer('true')">
-
-            True
-
-        </button>
-
-
-        <button class="answer"
-                onclick="trueFalseAnswer('false')">
-
-            False
-
-        </button>
-
-
-        <div id="trueFalseResult"></div>
-
-    </div>
-
 
 </section>
 
@@ -511,11 +594,8 @@
 
 <section id="quizMenu" class="screen">
 
-    <button class="back"
-            onclick="showScreen('home')">
-
+    <button class="back" onclick="showScreen('home')">
         ← Back
-
     </button>
 
 
@@ -523,13 +603,18 @@
 
         <h2>📝 Online Banking Quiz</h2>
 
-        <p>Test what you have learned!</p>
+        <p>
+            Test what you have learned!
+        </p>
 
-        <p>You will answer 10 questions.</p>
+
+        <p>
+            You will answer 5 questions.
+        </p>
 
 
         <button class="primary"
-                onclick="startQuiz()">
+            onclick="startQuiz()">
 
             Start Quiz ▶
 
@@ -546,7 +631,7 @@
 <section id="quiz" class="screen">
 
     <button class="back"
-            onclick="exitQuiz()">
+        onclick="exitQuiz()">
 
         ← Exit Quiz
 
@@ -557,14 +642,16 @@
 
         <p id="questionNumber"></p>
 
+
         <h2 id="quizQuestion"></h2>
+
 
         <div id="quizOptions"></div>
 
 
         <button id="nextButton"
-                class="primary"
-                onclick="nextQuestion()">
+            class="primary"
+            onclick="nextQuestion()">
 
             Next →
 
@@ -576,7 +663,7 @@
 
 
 
-<!-- ================= RESULT ================= -->
+<!-- ================= QUIZ RESULT ================= -->
 
 <section id="result" class="screen">
 
@@ -584,13 +671,15 @@
 
         <h2>🏆 Quiz Completed!</h2>
 
+
         <h1 id="finalScore"></h1>
+
 
         <p id="scoreMessage"></p>
 
 
         <button class="primary"
-                onclick="startQuiz()">
+            onclick="startQuiz()">
 
             Try Again 🔄
 
@@ -598,7 +687,7 @@
 
 
         <button class="backHome"
-                onclick="showScreen('home')">
+            onclick="showScreen('home')">
 
             🏠 Go Home
 
@@ -614,11 +703,8 @@
 
 <section id="emergency" class="screen">
 
-    <button class="back"
-            onclick="showScreen('home')">
-
+    <button class="back" onclick="showScreen('home')">
         ← Back
-
     </button>
 
 
@@ -629,7 +715,9 @@
 
         <h3>Think You Have Been Scammed?</h3>
 
-        <p>Act quickly and protect your account.</p>
+        <p>
+            Act quickly and stay calm.
+        </p>
 
     </div>
 
@@ -651,7 +739,32 @@
         <h3>2️⃣ Stop Sharing Information</h3>
 
         <p>
-            Do not communicate further with the suspected scammer.
+            Do not share any more information
+            with the suspected fraudster.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>3️⃣ Secure Your Accounts</h3>
+
+        <p>
+            Change passwords if you believe
+            your account information was exposed.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>4️⃣ Report the Incident</h3>
+
+        <p>
+            Report the incident through appropriate
+            official banking and cybercrime channels.
         </p>
 
     </div>
@@ -660,10 +773,7 @@
 
 
 
-<!-- JAVASCRIPT FILE -->
-
 <script src="script.js"></script>
-
 
 </body>
 
