@@ -1,3 +1,4 @@
+```javascript
 
 
 /* =========================
@@ -24,6 +25,15 @@ function showScreen(screenId) {
 
     window.scrollTo(0, 0);
 
+
+    /* Start Do or Don't Challenge */
+
+    if (screenId === "dosDont") {
+
+        startDoDont();
+
+    }
+
 }
 
 
@@ -35,11 +45,15 @@ function showScreen(screenId) {
 function checkPassword() {
 
     let password =
-        document.getElementById("passwordInput").value;
+        document.getElementById(
+            "passwordInput"
+        ).value;
 
 
     let result =
-        document.getElementById("passwordResult");
+        document.getElementById(
+            "passwordResult"
+        );
 
 
     let score = 0;
@@ -87,6 +101,7 @@ function checkPassword() {
 
     }
 
+
     else if (score <= 2) {
 
         result.innerHTML =
@@ -94,12 +109,14 @@ function checkPassword() {
 
     }
 
+
     else if (score <= 4) {
 
         result.innerHTML =
-            "🟠 Medium strength. Make it longer and more unique.";
+            "🟠 Medium strength. Make it longer and unique.";
 
     }
+
 
     else {
 
@@ -113,26 +130,28 @@ function checkPassword() {
 
 
 /* =========================
-   ACTIVITY 1 - SCAM
+   SPOT THE SCAM
 ========================= */
 
 function scamAnswer(answer) {
 
     let result =
-        document.getElementById("activityResult");
+        document.getElementById(
+            "activityResult"
+        );
 
 
     if (answer === "scam") {
 
         result.innerHTML =
-            "🎉 Correct! This message contains warning signs of a scam.";
+            "🎉 Correct! An urgent message asking for an OTP is a warning sign of a scam.";
 
     }
 
     else {
 
         result.innerHTML =
-            "❌ Be careful! This is a scam message.";
+            "❌ Incorrect. Urgent messages asking for an OTP are warning signs of a scam.";
 
     }
 
@@ -141,26 +160,28 @@ function scamAnswer(answer) {
 
 
 /* =========================
-   ACTIVITY 2 - OTP
+   OTP ACTIVITY
 ========================= */
 
 function otpAnswer(answer) {
 
     let result =
-        document.getElementById("otpResult");
+        document.getElementById(
+            "otpResult"
+        );
 
 
     if (answer === "dontShare") {
 
         result.innerHTML =
-            "🎉 Correct! Never share your OTP.";
+            "🎉 Correct! Never share your OTP with another person.";
 
     }
 
     else {
 
         result.innerHTML =
-            "❌ Wrong! OTP should never be shared.";
+            "❌ Wrong! Never share your OTP.";
 
     }
 
@@ -169,110 +190,273 @@ function otpAnswer(answer) {
 
 
 /* =========================
-   ACTIVITY 3 - LINK
+   DO OR DON'T QUESTIONS
 ========================= */
 
-function linkAnswer(answer) {
+const doDontQuestions = [
 
-    let result =
-        document.getElementById("linkResult");
+    {
+
+        question:
+
+        "You receive a call from an unknown person asking for your OTP. Should you share it?",
 
 
-    if (answer === "fake") {
+        answer: "dont",
 
-        result.innerHTML =
-            "🎉 Correct! This link looks suspicious.";
+
+        correctMessage:
+
+        "🎉 Correct! DON'T share your OTP with anyone."
+
+    },
+
+
+    {
+
+        question:
+
+        "You want to open your bank account online. Should you use the official bank app or official website?",
+
+
+        answer: "do",
+
+
+        correctMessage:
+
+        "🎉 Correct! DO use official banking apps and websites."
+
+    },
+
+
+    {
+
+        question:
+
+        "You receive a suspicious link saying you won a prize. Should you click it?",
+
+
+        answer: "dont",
+
+
+        correctMessage:
+
+        "🎉 Correct! DON'T click suspicious links."
+
+    },
+
+
+    {
+
+        question:
+
+        "Before making a payment, should you check the receiver's name and details?",
+
+
+        answer: "do",
+
+
+        correctMessage:
+
+        "🎉 Correct! DO check payment details carefully."
+
+    },
+
+
+    {
+
+        question:
+
+        "Should you share your UPI PIN with a caller who says they work for your bank?",
+
+
+        answer: "dont",
+
+
+        correctMessage:
+
+        "🎉 Correct! DON'T share your UPI PIN."
 
     }
 
-    else {
+];
 
-        result.innerHTML =
-            "❌ Be careful! Unknown links can be dangerous.";
 
-    }
 
-}
+let doDontCurrent = 0;
+
+let doDontScore = 0;
+
+let doDontAnswered = false;
 
 
 
 /* =========================
-   ACTIVITY 4 - BANK CALL
+   START DO OR DON'T
 ========================= */
 
-function callAnswer(answer) {
+function startDoDont() {
 
-    let result =
-        document.getElementById("callResult");
+    doDontCurrent = 0;
+
+    doDontScore = 0;
 
 
-    if (answer === "verify") {
+    showScreenWithoutRestart(
+        "dosDont"
+    );
 
-        result.innerHTML =
-            "🎉 Correct! Disconnect and contact your bank.";
 
-    }
-
-    else {
-
-        result.innerHTML =
-            "❌ Wrong! Never share confidential information.";
-
-    }
+    loadDoDontQuestion();
 
 }
 
 
 
 /* =========================
-   ACTIVITY 5 - UPI
+   SHOW SCREEN WITHOUT RESTART
 ========================= */
 
-function upiAnswer(answer) {
+function showScreenWithoutRestart(screenId) {
 
-    let result =
-        document.getElementById("upiResult");
+    let screens =
+        document.querySelectorAll(".screen");
 
 
-    if (answer === "careful") {
+    screens.forEach(function(screen) {
 
-        result.innerHTML =
-            "🎉 Correct! Always verify before scanning.";
+        screen.classList.remove("active");
 
-    }
+    });
 
-    else {
 
-        result.innerHTML =
-            "❌ Be careful! Unknown QR codes can be dangerous.";
+    document
+        .getElementById(screenId)
+        .classList.add("active");
 
-    }
+
+    window.scrollTo(0, 0);
 
 }
 
 
 
 /* =========================
-   ACTIVITY 6 - TRUE FALSE
+   LOAD DO OR DON'T
 ========================= */
 
-function trueFalseAnswer(answer) {
+function loadDoDontQuestion() {
+
+    doDontAnswered = false;
+
+
+    document
+        .getElementById("doDontResult")
+        .innerHTML = "";
+
+
+    document
+        .getElementById("doDontNext")
+        .style.display = "none";
+
+
+    let current =
+        doDontQuestions[doDontCurrent];
+
+
+    document
+        .getElementById("doDontNumber")
+        .innerHTML =
+
+        "Situation " +
+        (doDontCurrent + 1) +
+        " of " +
+        doDontQuestions.length;
+
+
+    document
+        .getElementById("doDontQuestion")
+        .innerHTML =
+        current.question;
+
+}
+
+
+
+/* =========================
+   ANSWER DO OR DON'T
+========================= */
+
+function answerDoDont(answer) {
+
+    if (doDontAnswered) {
+
+        return;
+
+    }
+
+
+    doDontAnswered = true;
+
+
+    let current =
+        doDontQuestions[doDontCurrent];
+
 
     let result =
-        document.getElementById("trueFalseResult");
+        document.getElementById(
+            "doDontResult"
+        );
 
 
-    if (answer === "false") {
+    if (answer === current.answer) {
+
+        doDontScore++;
+
 
         result.innerHTML =
-            "🎉 Correct! Passwords should remain private.";
+            current.correctMessage;
 
     }
 
     else {
 
         result.innerHTML =
-            "❌ Wrong! Never share your banking password.";
+            "❌ Incorrect. Think carefully about how to protect your banking information.";
+
+    }
+
+
+    document
+        .getElementById("doDontNext")
+        .style.display =
+        "inline-block";
+
+}
+
+
+
+/* =========================
+   NEXT DO OR DON'T
+========================= */
+
+function nextDoDont() {
+
+    doDontCurrent++;
+
+
+    if (
+        doDontCurrent <
+        doDontQuestions.length
+    ) {
+
+        loadDoDontQuestion();
+
+    }
+
+    else {
+
+        showDoDontResult();
 
     }
 
@@ -281,7 +465,65 @@ function trueFalseAnswer(answer) {
 
 
 /* =========================
-   QUIZ DATA - 10 QUESTIONS
+   DO OR DON'T RESULT
+========================= */
+
+function showDoDontResult() {
+
+    showScreenWithoutRestart(
+        "doDontFinal"
+    );
+
+
+    document
+        .getElementById("doDontScore")
+        .innerHTML =
+
+        doDontScore +
+        " / " +
+        doDontQuestions.length;
+
+
+    let message =
+        document.getElementById(
+            "doDontMessage"
+        );
+
+
+    if (
+        doDontScore ===
+        doDontQuestions.length
+    ) {
+
+        message.innerHTML =
+            "🎉 Excellent! You know how to make safer online banking decisions.";
+
+    }
+
+
+    else if (
+        doDontScore >= 3
+    ) {
+
+        message.innerHTML =
+            "👍 Good job! Keep learning and stay alert.";
+
+    }
+
+
+    else {
+
+        message.innerHTML =
+            "📚 Keep learning! Review the safety information and try again.";
+
+    }
+
+}
+
+
+
+/* =========================
+   QUIZ QUESTIONS
 ========================= */
 
 const questions = [
@@ -289,19 +531,17 @@ const questions = [
     {
 
         question:
-            "Should you share your OTP with anyone?",
+        "Should you share your OTP with anyone?",
 
-        options: [
 
+        options:
+        [
             "Yes",
-
             "No",
-
             "Only with friends",
-
-            "Only with strangers"
-
+            "Only with unknown callers"
         ],
+
 
         answer: 1
 
@@ -311,19 +551,17 @@ const questions = [
     {
 
         question:
-            "What should you do with a suspicious banking link?",
+        "What should you do when you receive a suspicious banking link?",
 
-        options: [
 
+        options:
+        [
             "Click immediately",
-
-            "Enter password",
-
-            "Avoid clicking and verify",
-
-            "Forward to everyone"
-
+            "Enter your password",
+            "Avoid clicking and verify through an official channel",
+            "Forward it to everyone"
         ],
+
 
         answer: 2
 
@@ -333,19 +571,17 @@ const questions = [
     {
 
         question:
-            "Which is safer for banking?",
+        "Which is safer for accessing your bank?",
 
-        options: [
 
-            "Official banking app",
-
-            "Random message link",
-
-            "Unknown website",
-
-            "Random advertisement"
-
+        options:
+        [
+            "Official banking app or verified official website",
+            "Any link received in a message",
+            "A website suggested by an unknown caller",
+            "A random advertisement"
         ],
+
 
         answer: 0
 
@@ -355,19 +591,17 @@ const questions = [
     {
 
         question:
-            "Which password is better?",
+        "Which password is generally better?",
 
-        options: [
 
+        options:
+        [
             "12345678",
-
             "password",
-
-            "Your birthday",
-
-            "Long and unique password"
-
+            "Your name and birthday",
+            "A long and unique password or passphrase"
         ],
+
 
         answer: 3
 
@@ -377,131 +611,19 @@ const questions = [
     {
 
         question:
-            "What should you do if a caller asks for confidential information?",
+        "What should you do if someone claims to be from the bank and asks for confidential information?",
 
-        options: [
 
-            "Share information",
-
-            "Verify using official bank contact",
-
-            "Share OTP",
-
-            "Give password"
-
+        options:
+        [
+            "Share everything",
+            "Verify independently using official contact information",
+            "Share your OTP",
+            "Give your password"
         ],
+
 
         answer: 1
-
-    },
-
-
-    {
-
-        question:
-            "Should you share your ATM PIN?",
-
-        options: [
-
-            "Yes",
-
-            "Only with friends",
-
-            "Never",
-
-            "By SMS"
-
-        ],
-
-        answer: 2
-
-    },
-
-
-    {
-
-        question:
-            "Which is a phishing warning sign?",
-
-        options: [
-
-            "Urgent request to click a link",
-
-            "Expected bank message",
-
-            "Personal note",
-
-            "Saved contact"
-
-        ],
-
-        answer: 0
-
-    },
-
-
-    {
-
-        question:
-            "Before entering banking details on a website, what should you do?",
-
-        options: [
-
-            "Enter quickly",
-
-            "Verify official website",
-
-            "Share with strangers",
-
-            "Ignore security"
-
-        ],
-
-        answer: 1
-
-    },
-
-
-    {
-
-        question:
-            "What should you do if your account may be compromised?",
-
-        options: [
-
-            "Ignore it",
-
-            "Tell everyone your password",
-
-            "Contact your bank",
-
-            "Wait many days"
-
-        ],
-
-        answer: 2
-
-    },
-
-
-    {
-
-        question:
-            "Which information must remain private?",
-
-        options: [
-
-            "OTP, PIN, Password and CVV",
-
-            "Favorite color",
-
-            "First name",
-
-            "City name"
-
-        ],
-
-        answer: 0
 
     }
 
@@ -532,6 +654,7 @@ function startQuiz() {
 
     showScreen("quiz");
 
+
     loadQuestion();
 
 }
@@ -559,6 +682,7 @@ function loadQuestion() {
     document
         .getElementById("questionNumber")
         .innerHTML =
+
         "Question " +
         (currentQuestion + 1) +
         " of " +
@@ -572,7 +696,9 @@ function loadQuestion() {
 
 
     let optionsDiv =
-        document.getElementById("quizOptions");
+        document.getElementById(
+            "quizOptions"
+        );
 
 
     optionsDiv.innerHTML = "";
@@ -583,7 +709,9 @@ function loadQuestion() {
 
 
             let button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
 
 
             button.innerHTML = option;
@@ -604,7 +732,9 @@ function loadQuestion() {
                 };
 
 
-            optionsDiv.appendChild(button);
+            optionsDiv.appendChild(
+                button
+            );
 
         }
 
@@ -624,17 +754,23 @@ function selectAnswer(index, button) {
 
 
     let buttons =
-        document.querySelectorAll(".quizOption");
+        document.querySelectorAll(
+            ".quizOption"
+        );
 
 
     buttons.forEach(function(btn) {
 
-        btn.classList.remove("selected");
+        btn.classList.remove(
+            "selected"
+        );
 
     });
 
 
-    button.classList.add("selected");
+    button.classList.add(
+        "selected"
+    );
 
 
     document
@@ -685,7 +821,7 @@ function nextQuestion() {
 
 
 /* =========================
-   SHOW RESULT
+   SHOW QUIZ RESULT
 ========================= */
 
 function showResult() {
@@ -696,37 +832,38 @@ function showResult() {
     document
         .getElementById("finalScore")
         .innerHTML =
+
         score +
         " / " +
         questions.length;
 
 
     let message =
-        document.getElementById("scoreMessage");
+        document.getElementById(
+            "scoreMessage"
+        );
 
 
-    if (
-        score === questions.length
-    ) {
+    if (score === 5) {
 
         message.innerHTML =
-            "🎉 Excellent! Perfect score!";
+            "🎉 Excellent! You have strong online banking safety knowledge.";
 
     }
 
-    else if (
-        score >= 6
-    ) {
+
+    else if (score >= 3) {
 
         message.innerHTML =
-            "👍 Good job! Keep learning.";
+            "👍 Good job! Keep learning about online banking safety.";
 
     }
+
 
     else {
 
         message.innerHTML =
-            "📚 Keep learning and try again!";
+            "📚 Keep learning! Try the quiz again after reading the safety information.";
 
     }
 
@@ -743,3 +880,4 @@ function exitQuiz() {
     showScreen("quizMenu");
 
 }
+```
