@@ -167,12 +167,50 @@ input:focus {
 
 /* ================= PASSWORD RESULT ================= */
 
-#passwordResult {
-    margin-top: 15px;
-    font-weight: bold;
-    padding: 10px;
+.password-box {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f5f8ff;
 }
 
+.password-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.password-input input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 8px 0 0 8px;
+}
+
+.eye-btn {
+    padding: 11px 14px;
+    border: 1px solid #aaa;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    background: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#strengthResult {
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#passwordAdvice {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff;
+}
 
 /* ================= ACTIVITIES ================= */
 
