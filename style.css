@@ -1,6 +1,13 @@
-body {
-    background: red !important;
-}
+/* =========================================================
+   SECURE BANKING AWARENESS
+   COMPLETE STYLE SHEET
+========================================================= */
+
+
+/* =========================
+   BASIC RESET
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -11,383 +18,960 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #222;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #eaf3ff,
+        #f7fbff
+    );
+
+    color: #1f2937;
+
+    min-height: 100vh;
 }
 
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .app-header {
-    background: #1565c0;
+    background: linear-gradient(
+        135deg,
+        #1768d5,
+        #0d47a1
+    );
+
     color: white;
+
     text-align: center;
-    padding: 18px;
+
+    padding: 25px 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.18);
 }
 
 .app-header h1 {
     margin: 0;
-    font-size: 24px;
+
+    font-size: 30px;
+
+    font-weight: 700;
 }
 
 .app-header p {
-    margin: 6px 0 0;
+    margin: 8px 0 0;
+
+    font-size: 15px;
+
+    opacity: 0.95;
 }
 
 
-/* ================= SCREENS ================= */
+/* =========================
+   SCREEN
+========================= */
 
 .screen {
     display: none;
-    min-height: calc(100vh - 100px);
-    padding: 20px;
-    max-width: 700px;
-    margin: auto;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 25px 18px 45px;
 }
 
-/* Only the current screen is visible */
 .screen.active {
     display: block;
 }
 
 
-/* ================= WELCOME ================= */
+/* =========================
+   HEADINGS
+========================= */
 
-.welcome {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
+.screen h2 {
+    color: #1459b8;
+
+    margin-top: 18px;
+
+    margin-bottom: 18px;
+
+    font-size: 27px;
+}
+
+.screen h3 {
+    color: #174f96;
+}
+
+.screen p {
+    line-height: 1.6;
 }
 
 
-/* ================= MENU ================= */
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 6px 20px rgba(20, 80, 150, 0.12);
+}
+
+.welcome h2 {
+    margin-top: 0;
+
+    color: #1768d5;
+}
+
+.welcome p {
+    margin-bottom: 0;
+
+    color: #4b5563;
+}
+
+
+/* =========================
+   MENU
+========================= */
 
 .menu {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
 }
 
+
+/* =========================
+   MENU BUTTONS
+========================= */
+
 .menu button {
-    background: white;
+    min-height: 110px;
+
     border: none;
-    border-radius: 15px;
-    padding: 25px 10px;
-    font-size: 17px;
+
+    border-radius: 18px;
+
+    background: white;
+
+    color: #1459b8;
+
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.2s;
+
+    padding: 18px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 6px 18px rgba(20, 80, 150, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
 
 .menu button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 24px rgba(20, 80, 150, 0.18);
+
+    background: #f5f9ff;
 }
 
 .menu button:active {
-    transform: scale(0.97);
+    transform: translateY(-1px);
 }
 
-.menu span {
+.menu button span {
     display: block;
-    margin-top: 10px;
+
+    margin-top: 9px;
+
+    font-size: 16px;
+
+    color: #174f96;
 }
 
 
-/* ================= CARD ================= */
-
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-    color: #1565c0;
-}
-
-
-/* ================= BACK BUTTON ================= */
+/* =========================
+   BACK BUTTON
+========================= */
 
 .back {
     border: none;
-    background: #e3eaf5;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 15px;
+
+    background: #dceaff;
+
+    color: #1459b8;
+
+    border-radius: 10px;
+
+    padding: 10px 17px;
+
     font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .back:hover {
-    background: #d2ddec;
+    background: #c8ddfa;
+
+    transform: translateX(-2px);
 }
 
 
-/* ================= PRIMARY BUTTON ================= */
+/* =========================
+   CARDS
+========================= */
 
-.primary {
-    background: #1565c0;
-    color: white;
-    border: none;
-    padding: 13px 25px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 15px;
+.card {
+    background: white;
+
+    border-radius: 17px;
+
+    padding: 21px;
+
+    margin: 17px 0;
+
+    box-shadow:
+        0 5px 18px rgba(20, 80, 150, 0.10);
+
+    border: 1px solid #edf3fb;
 }
 
-.primary:hover {
-    background: #0d47a1;
+.card h3 {
+    margin-top: 0;
+
+    margin-bottom: 13px;
+
+    color: #1459b8;
 }
 
-.primary:active {
-    transform: scale(0.97);
+.card h4 {
+    color: #b3261e;
 }
 
-
-/* ================= INPUT ================= */
-
-input {
-    width: 100%;
-    padding: 13px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-top: 10px;
-    outline: none;
-}
-
-input:focus {
-    border-color: #1565c0;
+.card p {
+    margin: 10px 0;
 }
 
 
-/* ================= PASSWORD RESULT ================= */
+/* =========================
+   PASSWORD BOX
+========================= */
 
 .password-box {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    background: #f5f8ff;
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    margin: 20px 0;
+
+    box-shadow:
+        0 6px 20px rgba(20, 80, 150, 0.12);
 }
+
+.password-box label {
+    display: block;
+
+    font-weight: 700;
+
+    color: #174f96;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   PASSWORD INPUT
+========================= */
 
 .password-input {
     display: flex;
+
     align-items: center;
-    margin-top: 10px;
+
+    gap: 9px;
+
+    width: 100%;
+
+    margin-top: 5px;
 }
 
 .password-input input {
     flex: 1;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #aaa;
-    border-radius: 8px 0 0 8px;
+
+    min-width: 0;
+
+    margin-top: 0;
 }
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #b9c9dc;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    background: #fbfdff;
+
+    color: #1f2937;
+
+    margin-top: 10px;
+
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: #1768d5;
+
+    box-shadow:
+        0 0 0 3px rgba(23, 104, 213, 0.12);
+}
+
+
+/* =========================
+   EYE BUTTON
+========================= */
 
 .eye-btn {
-    padding: 11px 14px;
-    border: 1px solid #aaa;
-    border-left: none;
-    border-radius: 0 8px 8px 0;
-    background: white;
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e4efff;
+
+    color: #1459b8;
+
+    font-size: 20px;
+
     cursor: pointer;
-    font-size: 18px;
+
+    transition: 0.2s;
 }
 
+.eye-btn:hover {
+    background: #cfe2ff;
+
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   PASSWORD STRENGTH
+========================= */
+
 #strengthResult {
-    margin: 15px 0;
-    font-size: 18px;
-    font-weight: bold;
+    margin-top: 17px;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    background: #f1f6ff;
+
+    color: #174f96;
+
+    font-weight: 700;
+
+    text-align: center;
 }
 
 #passwordAdvice {
-    margin-top: 15px;
+    margin-top: 12px;
+
     padding: 12px;
-    border-radius: 8px;
-    background: #fff;
-}
 
-/* ================= ACTIVITIES ================= */
+    border-radius: 10px;
 
-.question {
-    font-size: 17px;
+    background: #f8fafc;
+
     line-height: 1.6;
 }
 
+#lengthCheck,
+#upperCheck,
+#lowerCheck,
+#numberCheck,
+#specialCheck {
+    padding: 9px 11px;
+
+    margin: 7px 0;
+
+    border-radius: 8px;
+
+    background: #f7f9fc;
+}
+
+
+/* =========================
+   ACTIVITY MENU
+========================= */
+
+.activity-menu {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   ACTIVITY ANSWER BUTTON
+========================= */
+
 .answer {
     display: block;
+
     width: 100%;
-    padding: 14px;
-    margin: 10px 0;
-    background: #eaf2ff;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
+
+    border: 1px solid #c8dcfa;
+
+    border-radius: 12px;
+
+    background: #f1f6ff;
+
+    color: #174f96;
+
+    padding: 14px 16px;
+
+    margin: 11px 0;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-align: left;
+
     cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
 .answer:hover {
-    background: #dbeafe;
+    background: #e2eeff;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        0 4px 10px rgba(20, 80, 150, 0.10);
+}
+
+.answer:active {
+    transform: translateX(1px);
 }
 
 
-/* ================= DO OR DON'T ================= */
+/* =========================
+   NEW ACTIVITY RESULTS
+========================= */
 
-.do-button,
-.dont-button {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: none;
+#newUPIResult,
+#newOTPResult,
+#newPhishingResult,
+#newSafeUnsafeResult {
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    line-height: 1.5;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   OLD ACTIVITY RESULTS
+========================= */
+
+#activityResult,
+#otpResult,
+#doDontResult {
+    margin-top: 15px;
+
+    padding: 12px;
+
     border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
+
+    line-height: 1.5;
+
+    font-weight: 700;
 }
+
+
+/* =========================
+   DO BUTTON
+========================= */
 
 .do-button {
-    background: #e8f5e9;
+    border: none;
+
+    border-radius: 11px;
+
+    background: #dff5e4;
+
+    color: #217a36;
+
+    padding: 13px 20px;
+
+    margin: 6px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .do-button:hover {
-    background: #c8e6c9;
+    background: #c9ecd1;
+
+    transform: translateY(-2px);
 }
 
+
+/* =========================
+   DON'T BUTTON
+========================= */
+
 .dont-button {
-    background: #ffebee;
+    border: none;
+
+    border-radius: 11px;
+
+    background: #ffe2e2;
+
+    color: #b3261e;
+
+    padding: 13px 20px;
+
+    margin: 6px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .dont-button:hover {
-    background: #ffcdd2;
-}
+    background: #ffd0d0;
 
-#doDontResult {
-    margin-top: 15px;
-    padding: 10px;
-    font-weight: bold;
-}
-
-#doDontNext {
-    display: none;
+    transform: translateY(-2px);
 }
 
 
-/* ================= VIDEO ================= */
+/* =========================
+   PRIMARY BUTTON
+========================= */
 
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.primary {
     border: none;
+
+    border-radius: 12px;
+
+    background: #1768d5;
+
+    color: white;
+
+    padding: 13px 21px;
+
+    margin-top: 13px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(23, 104, 213, 0.20);
+
+    transition: 0.2s;
+}
+
+.primary:hover {
+    background: #0d57b9;
+
+    transform: translateY(-2px);
 }
 
 
-/* ================= QUIZ ================= */
+/* =========================
+   BACK HOME BUTTON
+========================= */
+
+.backHome {
+    border: none;
+
+    border-radius: 12px;
+
+    background: #e5efff;
+
+    color: #1459b8;
+
+    padding: 13px 21px;
+
+    margin-top: 13px;
+
+    margin-left: 6px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.backHome:hover {
+    background: #d2e4ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   QUIZ WELCOME
+========================= */
 
 .quizWelcome {
     background: white;
-    margin-top: 40px;
-    padding: 30px;
-    border-radius: 20px;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-top: 18px;
+
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    box-shadow:
+        0 6px 20px rgba(20, 80, 150, 0.12);
 }
+
+.quizWelcome h2 {
+    margin-top: 0;
+
+    color: #1459b8;
+}
+
+
+/* =========================
+   QUIZ BOX
+========================= */
 
 .quizBox {
     background: white;
-    padding: 25px;
-    margin-top: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    margin-top: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(20, 80, 150, 0.12);
 }
+
+#questionNumber {
+    color: #1768d5;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+#quizQuestion {
+    color: #1f2937;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   QUIZ OPTIONS
+========================= */
 
 .quizOption {
     display: block;
+
     width: 100%;
-    padding: 15px;
-    margin: 12px 0;
-    background: #f2f6fc;
-    border: none;
-    border-radius: 10px;
+
     text-align: left;
-    font-size: 16px;
+
+    background: #f5f8fc;
+
+    border: 1px solid #d5dfeb;
+
+    border-radius: 11px;
+
+    padding: 14px;
+
+    margin: 9px 0;
+
     cursor: pointer;
+
+    font-size: 15px;
+
+    color: #26364a;
+
     transition: 0.2s;
 }
 
 .quizOption:hover {
-    background: #dbeafe;
+    background: #eaf3ff;
+
+    border-color: #a9c8ee;
 }
 
 .quizOption.selected {
-    background: #bbdefb !important;
-    outline: 2px solid #1565c0;
+    background: #d9eaff;
+
+    border-color: #1768d5;
+
+    color: #124c99;
+
+    font-weight: 700;
 }
+
+
+/* =========================
+   QUIZ NEXT BUTTON
+========================= */
 
 #nextButton {
     display: none;
 }
 
 
-/* ================= HOME BUTTON ================= */
+/* =========================
+   QUESTION
+========================= */
 
-.backHome {
-    background: #eeeeee;
-    border: none;
-    padding: 13px 25px;
+.question {
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    background: #f7faff;
+
     border-radius: 10px;
+
+    padding: 14px;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-container {
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 56.25%;
+
+    height: 0;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
     margin-top: 15px;
-    cursor: pointer;
+
+    background: #000;
 }
 
-.backHome:hover {
-    background: #dddddd;
+.video-container iframe {
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+
+    left: 0;
+
+    top: 0;
 }
 
 
-/* ================= EMERGENCY ================= */
+/* =========================
+   EMERGENCY
+========================= */
 
 .emergencyCard {
     border-left: 5px solid #d32f2f;
 }
 
+.emergencyCard h3 {
+    color: #b3261e;
+}
 
-/* ================= MOBILE ================= */
 
-@media (max-width: 500px) {
+/* =========================
+   LISTS
+========================= */
+
+.card ul,
+.card ol {
+    line-height: 1.8;
+
+    padding-left: 25px;
+}
+
+.card li {
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .app-header {
+        padding: 20px 12px;
+    }
+
+    .app-header h1 {
+        font-size: 25px;
+    }
+
+    .app-header p {
+        font-size: 14px;
+    }
+
+    .screen {
+        padding: 18px 12px 35px;
+    }
+
+    .screen h2 {
+        font-size: 23px;
+    }
 
     .menu {
         grid-template-columns: 1fr;
     }
 
-    .screen {
-        padding: 15px;
+    .menu button {
+        min-height: 85px;
     }
 
+    .card,
+    .password-box,
+    .quizBox,
+    .quizWelcome {
+        padding: 17px;
+    }
+
+    .password-input {
+        gap: 7px;
+    }
+
+    .eye-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .do-button,
+    .dont-button {
+        width: 100%;
+
+        margin: 6px 0;
+    }
+
+    .primary,
+    .backHome {
+        width: 100%;
+
+        margin-left: 0;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
     .app-header h1 {
+        font-size: 22px;
+    }
+
+    .screen h2 {
         font-size: 21px;
     }
 
-    .quizWelcome {
-        padding: 20px;
+    .menu button {
+        min-height: 78px;
+
+        padding: 13px;
     }
 
+    .card {
+        padding: 15px;
+    }
+
+    .answer {
+        font-size: 14px;
+
+        padding: 12px;
+    }
 }
