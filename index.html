@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,775 +15,1032 @@
 
 <body>
 
-<header>
-    <h1>🏦 Secure Banking</h1>
-    <p>Learn • Stay Safe • Bank Securely</p>
-</header>
+    <!-- HEADER -->
+    <header class="app-header">
+        <h1>🏦 Secure Banking</h1>
+        <p>Learn • Stay Safe • Bank Securely</p>
+    </header>
 
-<!-- HOME -->
-<section id="home" class="screen active">
 
-    <h2>Welcome to Secure Banking Awareness</h2>
+    <!-- HOME -->
+    <section id="home" class="screen active">
 
-    <p>
-        Learn how to use Online Banking, UPI and Digital Financial Services
-        safely and responsibly.
-    </p>
+        <div class="welcome">
+            <h2>Welcome! 👋</h2>
 
-    <div class="menu-grid">
+            <p>
+                Learn how to protect yourself while using
+                online banking and digital payments.
+            </p>
+        </div>
 
-        <button onclick="showScreen('learn')">
-            📚 Learn Banking Safety
+        <div class="menu">
+
+            <button type="button" onclick="showScreen('learn')">
+                📚
+                <span>Learn</span>
+            </button>
+
+            <button type="button" onclick="showScreen('password')">
+                🔐
+                <span>Password Safety</span>
+            </button>
+
+            <button type="button" onclick="showScreen('scam')">
+                ⚠️
+                <span>Scam Awareness</span>
+            </button>
+
+            <button type="button" onclick="showScreen('activityMenu')">
+                🎮
+                <span>Activities</span>
+            </button>
+
+            <button type="button" onclick="showScreen('quizMenu')">
+                📝
+                <span>Quiz</span>
+            </button>
+
+            <button type="button" onclick="showScreen('video')">
+                🎥
+                <span>Watch & Learn</span>
+            </button>
+
+            <button type="button" onclick="startDoDont()">
+                ✅❌
+                <span>Do & Don't</span>
+            </button>
+
+            <button type="button" onclick="showScreen('emergency')">
+                🚨
+                <span>Emergency Help</span>
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- LEARN -->
+    <section id="learn" class="screen">
+
+        <button type="button" class="back" onclick="showScreen('home')">
+            ← Back
         </button>
 
-        <button onclick="showScreen('password')">
-            🔐 Password Safety
+        <h2>📚 Learn Online Banking</h2>
+
+        <div class="card">
+            <h3>What is Online Banking?</h3>
+
+            <p>
+                Online banking allows you to use banking
+                services through the internet.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>What Can You Do?</h3>
+
+            <p>💸 Transfer money</p>
+            <p>📊 Check account balance</p>
+            <p>📱 Pay bills</p>
+            <p>💳 View transactions</p>
+        </div>
+
+        <div class="card">
+            <h3>Stay Safe 🛡️</h3>
+
+            <p>
+                Always use the official website or official
+                banking application.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- PASSWORD -->
+    <section id="password" class="screen">
+
+        <button type="button" class="back" onclick="showScreen('home')">
+            ← Back
         </button>
 
-        <button onclick="showScreen('scam')">
-            🚨 Scam Awareness
-        </button>
-
-        <button onclick="showScreen('activities')">
-            🎯 Interactive Activities
-        </button>
-
-        <button onclick="showScreen('quizMenu')">
-            🧠 Knowledge Quiz
-        </button>
-
-        <button onclick="showScreen('video')">
-            🎥 Watch & Learn
-        </button>
-
-        <button onclick="showScreen('dosDont')">
-            ✅ Do & Don't
-        </button>
-
-        <button onclick="showScreen('emergency')">
-            🆘 Emergency Help
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- LEARN -->
-<section id="learn" class="screen">
-
-    <button class="back-btn" onclick="showScreen('home')">← Back</button>
-
-    <h2>📚 Online Banking Safety</h2>
-
-    <div class="info-card">
-        <h3>What is Online Banking?</h3>
+        <h2>🔐 Password Security Checker</h2>
 
         <p>
-            Online banking allows you to check your account,
-            transfer money, pay bills and manage banking services
-            using the internet.
+            A strong password helps protect your online banking
+            account from unauthorized access.
         </p>
-    </div>
 
-    <div class="info-card">
-        <h3>Basic Safety Rules</h3>
+        <div class="password-box">
 
-        <ul>
-            <li>Use only the official banking app or website.</li>
-            <li>Keep your password private.</li>
-            <li>Never share OTP with anyone.</li>
-            <li>Never share ATM PIN or UPI PIN.</li>
-            <li>Check the receiver before making payments.</li>
-            <li>Keep your mobile and banking applications updated.</li>
-        </ul>
-    </div>
+            <label for="passwordInput">
+                Enter a password:
+            </label>
 
-    <div class="info-card">
-        <h3>Remember</h3>
+            <div class="password-input">
 
-        <p>
-            Banks do not normally ask you to share your OTP,
-            ATM PIN, UPI PIN, CVV or password over phone calls or messages.
-        </p>
-    </div>
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter your password"
+                    oninput="checkPasswordStrength()"
+                >
 
-</section>
+                <button
+                    type="button"
+                    class="eye-btn"
+                    onclick="togglePassword()">
+                    👁️
+                </button>
+
+            </div>
+
+            <div id="strengthResult">
+                Password strength will appear here.
+            </div>
+
+            <h3>Password should contain:</h3>
+
+            <p id="lengthCheck">
+                ❌ At least 8 characters
+            </p>
+
+            <p id="upperCheck">
+                ❌ One uppercase letter (A-Z)
+            </p>
+
+            <p id="lowerCheck">
+                ❌ One lowercase letter (a-z)
+            </p>
+
+            <p id="numberCheck">
+                ❌ One number (0-9)
+            </p>
+
+            <p id="specialCheck">
+                ❌ One special character (!@#$%)
+            </p>
+
+            <div id="passwordAdvice"></div>
+
+        </div>
 
 
-<!-- PASSWORD -->
-<section id="password" class="screen">
+        <div class="card">
 
-    <button class="back-btn" onclick="showScreen('home')">← Back</button>
+            <h3>Important Password Rules 🛡️</h3>
 
-    <h2>🔐 Password Safety</h2>
+            <p>🔒 Never share your password with anyone.</p>
 
-    <p>
-        Create a strong password and check its strength below.
-    </p>
+            <p>
+                🔄 Use different passwords for important accounts.
+            </p>
 
-    <div class="password-box">
+            <p>
+                👀 Do not save passwords on public computers.
+            </p>
 
-        <label for="passwordInput">Enter Password</label>
+            <p>
+                🚫 Do not use your name, birthday or mobile number
+                as your password.
+            </p>
 
-        <div class="password-input">
+            <p>
+                💡 Use a long passphrase with letters, numbers
+                and special characters.
+            </p>
 
-            <input
-                type="password"
-                id="passwordInput"
-                placeholder="Enter your password"
-                oninput="checkPasswordStrength()"
-            >
+        </div>
 
-            <button
-                type="button"
-                class="eye-btn"
-                onclick="togglePassword()"
-                id="eyeButton"
-            >
-                👁️
+    </section>
+
+
+    <!-- SCAM -->
+    <section id="scam" class="screen">
+
+        <button type="button" class="back" onclick="showScreen('home')">
+            ← Back
+        </button>
+
+        <h2>⚠️ Scam Awareness</h2>
+
+        <div class="card">
+            <h3>📱 OTP Scam</h3>
+
+            <p>
+                A fraudster may pretend to be a bank employee
+                and ask for your OTP.
+            </p>
+
+            <h4>Never share your OTP.</h4>
+        </div>
+
+        <div class="card">
+            <h3>☎️ Fake Bank Calls</h3>
+
+            <p>
+                A caller may threaten that your account will
+                be blocked and ask for confidential information.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔗 Fake Links</h3>
+
+            <p>
+                Fraudsters may send fake links through
+                SMS, WhatsApp, or email.
+            </p>
+
+            <p>
+                Do not enter banking information on suspicious
+                websites.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎣 Phishing</h3>
+
+            <p>
+                Phishing uses fake messages or websites
+                to steal personal information.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ACTIVITY MENU -->
+    <section id="activityMenu" class="screen">
+
+        <button type="button" class="back" onclick="showScreen('home')">
+            ← Back
+        </button>
+
+        <h2>🎮 Interactive Activities</h2>
+
+        <div class="menu activity-menu">
+
+            <!-- EXISTING ACTIVITY -->
+            <button type="button" onclick="showScreen('spotScam')">
+                🚨
+                <span>Spot the Scam</span>
+            </button>
+
+            <!-- EXISTING ACTIVITY -->
+            <button type="button" onclick="startDoDont()">
+                ✅❌
+                <span>Do or Don't</span>
+            </button>
+
+            <!-- EXISTING ACTIVITY -->
+            <button type="button" onclick="showScreen('password')">
+                🔐
+                <span>Password Challenge</span>
+            </button>
+
+
+            <!-- NEW ACTIVITY 1 -->
+            <button type="button" onclick="showScreen('upiActivity')">
+                💳
+                <span>UPI Safety Challenge</span>
+            </button>
+
+
+            <!-- NEW ACTIVITY 2 -->
+            <button type="button" onclick="showScreen('otpSafetyActivity')">
+                🔑
+                <span>OTP Safety Challenge</span>
+            </button>
+
+
+            <!-- NEW ACTIVITY 3 -->
+            <button type="button" onclick="showScreen('phishingActivity')">
+                🎣
+                <span>Phishing Detective</span>
+            </button>
+
+
+            <!-- NEW ACTIVITY 4 -->
+            <button type="button" onclick="showScreen('safeUnsafeActivity')">
+                🛡️
+                <span>Safe or Unsafe</span>
             </button>
 
         </div>
 
-    </div>
-
-    <div id="strengthResult">
-        Password strength will appear here.
-    </div>
-
-    <div id="passwordAdvice"></div>
-
-    <div class="info-card">
-
-        <h3>Important Password Rules</h3>
-
-        <ul>
-            <li id="lengthCheck">❌ At least 8 characters</li>
-            <li id="upperCheck">❌ One uppercase letter</li>
-            <li id="lowerCheck">❌ One lowercase letter</li>
-            <li id="numberCheck">❌ One number</li>
-            <li id="specialCheck">❌ One special character</li>
-        </ul>
-
-    </div>
-
-    <div class="info-card">
-
-        <h3>Never Use</h3>
-
-        <ul>
-            <li>Your name as password</li>
-            <li>Your date of birth</li>
-            <li>Mobile number</li>
-            <li>123456 or password</li>
-            <li>The same password everywhere</li>
-        </ul>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- SCAM AWARENESS -->
-<section id="scam" class="screen">
+    <!-- SPOT THE SCAM -->
+    <section id="spotScam" class="screen">
 
-    <button class="back-btn" onclick="showScreen('home')">← Back</button>
-
-    <h2>🚨 Scam Awareness</h2>
-
-    <div class="info-card">
-
-        <h3>Phishing</h3>
-
-        <p>
-            Phishing messages try to trick you into clicking fake links
-            or giving personal information.
-        </p>
-
-    </div>
-
-    <div class="info-card">
-
-        <h3>Fake Banking Calls</h3>
-
-        <p>
-            Fraudsters may pretend to be bank employees and ask for
-            OTP, PIN or other confidential information.
-        </p>
-
-    </div>
-
-    <div class="info-card">
-
-        <h3>Fake KYC Messages</h3>
-
-        <p>
-            Be careful with messages saying your account will be blocked
-            unless you complete KYC immediately.
-        </p>
-
-    </div>
-
-    <div class="info-card">
-
-        <h3>UPI Fraud</h3>
-
-        <p>
-            Never enter your UPI PIN just to receive money.
-            Always verify payment requests before approving them.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ACTIVITIES MENU -->
-<section id="activities" class="screen">
-
-    <button class="back-btn" onclick="showScreen('home')">← Back</button>
-
-    <h2>🎯 Interactive Activities</h2>
-
-    <p>
-        Test your knowledge through these activities.
-    </p>
-
-    <div class="menu-grid">
-
-        <!-- EXISTING ACTIVITIES -->
-
-        <button onclick="showScreen('spotScam')">
-            🚨 Spot the Scam
+        <button type="button" class="back"
+                onclick="showScreen('activityMenu')">
+            ← Back
         </button>
 
-        <button onclick="showScreen('dosDont')">
-            ✅ Do or Don't
+        <h2>🚨 Spot the Scam</h2>
+
+        <div class="card">
+
+            <h3>Situation 1</h3>
+
+            <p class="question">
+                📩 "Your bank account will be blocked today!
+                Click this link immediately and enter your OTP."
+            </p>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="scamAnswer('safe')">
+                ✅ Safe Message
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="scamAnswer('scam')">
+                🚨 This is a Scam
+            </button>
+
+            <div id="activityResult"></div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Situation 2</h3>
+
+            <p class="question">
+                Someone calls and says:
+                "I am from your bank. Tell me your OTP
+                to verify your account."
+            </p>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="otpAnswer('share')">
+                Share OTP
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="otpAnswer('dontShare')">
+                Do Not Share OTP
+            </button>
+
+            <div id="otpResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEW ACTIVITY 1 - UPI SAFETY
+    ====================================================== -->
+
+    <section id="upiActivity" class="screen">
+
+        <button
+            type="button"
+            class="back"
+            onclick="showScreen('activityMenu')">
+            ← Back
         </button>
 
-        <button onclick="showScreen('passwordChallenge')">
-            🔐 Password Challenge
+        <h2>💳 UPI Safety Challenge</h2>
+
+        <div class="card">
+
+            <h3>Situation</h3>
+
+            <p>
+                You receive a UPI payment request from a person
+                you do not recognize.
+            </p>
+
+            <p>
+                What should you do?
+            </p>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewUPI('verify')">
+                🔍 Verify the request first
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewUPI('pay')">
+                💰 Approve it immediately
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewUPI('pin')">
+                🔐 Enter UPI PIN to receive money
+            </button>
+
+            <div id="newUPIResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEW ACTIVITY 2 - OTP SAFETY
+    ====================================================== -->
+
+    <section id="otpSafetyActivity" class="screen">
+
+        <button
+            type="button"
+            class="back"
+            onclick="showScreen('activityMenu')">
+            ← Back
         </button>
 
+        <h2>🔑 OTP Safety Challenge</h2>
 
-        <!-- NEW ACTIVITIES -->
+        <div class="card">
 
-        <button onclick="showScreen('upiActivity')">
-            💳 UPI Safety Challenge
+            <h3>Situation</h3>
+
+            <p>
+                Someone calls and says:
+                "I am calling from your bank.
+                Tell me your OTP to verify your account."
+            </p>
+
+            <p>
+                What should you do?
+            </p>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewOTP('refuse')">
+                🚫 Refuse and contact the bank through an official channel
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewOTP('share')">
+                📱 Share the OTP
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewOTP('forward')">
+                📩 Forward the OTP to the caller
+            </button>
+
+            <div id="newOTPResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEW ACTIVITY 3 - PHISHING DETECTIVE
+    ====================================================== -->
+
+    <section id="phishingActivity" class="screen">
+
+        <button
+            type="button"
+            class="back"
+            onclick="showScreen('activityMenu')">
+            ← Back
         </button>
 
-        <button onclick="showScreen('otpSafetyActivity')">
-            🔑 OTP Safety Challenge
-        </button>
+        <h2>🎣 Phishing Detective</h2>
 
-        <button onclick="showScreen('phishingActivity')">
-            🎣 Phishing Detective
-        </button>
+        <div class="card">
 
-        <button onclick="showScreen('safeUnsafeActivity')">
-            🛡️ Safe or Unsafe
-        </button>
+            <h3>Can You Identify the Safe Action?</h3>
 
-    </div>
+            <p>
+                You receive this message:
+            </p>
 
-</section>
-
-
-<!-- SPOT THE SCAM -->
-<section id="spotScam" class="screen">
-
-    <button class="back-btn" onclick="showScreen('activities')">
-        ← Back
-    </button>
-
-    <h2>🚨 Spot the Scam</h2>
-
-    <div class="activity-card">
-
-        <p>
-            You receive a message:
-        </p>
-
-        <p>
-            <strong>
-                "Your bank account will be blocked today.
-                Click this link immediately to update KYC."
-            </strong>
-        </p>
-
-        <button onclick="spotScamAnswer('scam')">
-            🚨 This is a Scam
-        </button>
-
-        <button onclick="spotScamAnswer('safe')">
-            ✅ This is Safe
-        </button>
-
-        <p id="spotScamResult"></p>
-
-    </div>
-
-</section>
-
-
-<!-- PASSWORD CHALLENGE -->
-<section id="passwordChallenge" class="screen">
-
-    <button class="back-btn" onclick="showScreen('activities')">
-        ← Back
-    </button>
-
-    <h2>🔐 Password Challenge</h2>
-
-    <div class="activity-card">
-
-        <p>Which password is stronger?</p>
-
-        <button onclick="passwordChallengeAnswer('weak')">
-            12345678
-        </button>
-
-        <button onclick="passwordChallengeAnswer('strong')">
-            My@Bank2026!Safe
-        </button>
-
-        <p id="passwordChallengeResult"></p>
-
-    </div>
-
-</section>
-
-
-<!-- NEW: UPI SAFETY -->
-<section id="upiActivity" class="screen">
-
-    <button class="back-btn" onclick="showScreen('activities')">
-        ← Back
-    </button>
-
-    <h2>💳 UPI Safety Challenge</h2>
-
-    <div class="activity-card">
-
-        <p>
-            Someone sends you a UPI payment request.
-            You do not recognize the person.
-            What should you do?
-        </p>
-
-        <button onclick="checkUPISafety('verify')">
-            🔍 Verify the request first
-        </button>
-
-        <button onclick="checkUPISafety('pay')">
-            💰 Pay immediately
-        </button>
-
-        <button onclick="checkUPISafety('pin')">
-            🔐 Enter UPI PIN to receive money
-        </button>
-
-        <p id="upiResult"></p>
-
-    </div>
-
-</section>
-
-
-<!-- NEW: OTP SAFETY -->
-<section id="otpSafetyActivity" class="screen">
-
-    <button class="back-btn" onclick="showScreen('activities')">
-        ← Back
-    </button>
-
-    <h2>🔑 OTP Safety Challenge</h2>
-
-    <div class="activity-card">
-
-        <p>
-            A person calls you and says:
-            "I am calling from your bank. Tell me your OTP
-            to verify your account."
-        </p>
-
-        <p>
-            What should you do?
-        </p>
-
-        <button onclick="checkOTPSafety('refuse')">
-            🚫 Refuse and contact the bank through an official channel
-        </button>
-
-        <button onclick="checkOTPSafety('share')">
-            📱 Share the OTP
-        </button>
-
-        <button onclick="checkOTPSafety('forward')">
-            📩 Forward the OTP to the caller
-        </button>
-
-        <p id="otpSafetyResult"></p>
-
-    </div>
-
-</section>
-
-
-<!-- NEW: PHISHING DETECTIVE -->
-<section id="phishingActivity" class="screen">
-
-    <button class="back-btn" onclick="showScreen('activities')">
-        ← Back
-    </button>
-
-    <h2>🎣 Phishing Detective</h2>
-
-    <div class="activity-card">
-
-        <p>
-            You receive this message:
-        </p>
-
-        <p>
-            <strong>
+            <p class="question">
                 "URGENT! Your bank account will be suspended.
                 Complete KYC now using this link."
-            </strong>
-        </p>
+            </p>
 
-        <p>
-            What is the safest action?
-        </p>
+            <p>
+                What is the safest action?
+            </p>
 
-        <button onclick="checkPhishingActivity('official')">
-            🔍 Verify using the official bank app or website
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewPhishing('official')">
+                🔍 Verify using the official bank app or website
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewPhishing('click')">
+                🔗 Click the link immediately
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewPhishing('reply')">
+                💬 Reply with your bank details
+            </button>
+
+            <div id="newPhishingResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEW ACTIVITY 4 - SAFE OR UNSAFE
+    ====================================================== -->
+
+    <section id="safeUnsafeActivity" class="screen">
+
+        <button
+            type="button"
+            class="back"
+            onclick="showScreen('activityMenu')">
+            ← Back
         </button>
 
-        <button onclick="checkPhishingActivity('click')">
-            🔗 Click the link immediately
+        <h2>🛡️ Safe or Unsafe</h2>
+
+        <div class="card">
+
+            <h3>Situation</h3>
+
+            <p>
+                Someone asks for your ATM PIN to
+                "verify your bank account."
+            </p>
+
+            <p>
+                Is this safe or unsafe?
+            </p>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewSafeUnsafe('unsafe')">
+                🚨 Unsafe
+            </button>
+
+            <button
+                type="button"
+                class="answer"
+                onclick="checkNewSafeUnsafe('safe')">
+                ✅ Safe
+            </button>
+
+            <div id="newSafeUnsafeResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DO OR DON'T -->
+    <section id="dosDont" class="screen">
+
+        <button
+            type="button"
+            class="back"
+            onclick="showScreen('activityMenu')">
+            ← Back
         </button>
 
-        <button onclick="checkPhishingActivity('reply')">
-            💬 Reply with your bank details
+        <div class="quizWelcome">
+
+            <h2>✅❌ Do or Don't Challenge</h2>
+
+            <p>
+                Read each situation and choose the correct action.
+            </p>
+
+            <p id="doDontNumber"></p>
+
+            <div class="card">
+
+                <h3 id="doDontQuestion"></h3>
+
+                <button
+                    type="button"
+                    class="do-button"
+                    onclick="answerDoDont('do')">
+                    ✅ DO
+                </button>
+
+                <button
+                    type="button"
+                    class="dont-button"
+                    onclick="answerDoDont('dont')">
+                    ❌ DON'T
+                </button>
+
+                <div id="doDontResult"></div>
+
+            </div>
+
+            <button
+                type="button"
+                id="doDontNext"
+                class="primary"
+                onclick="nextDoDont()">
+                Next →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- DO OR DON'T RESULT -->
+    <section id="doDontFinal" class="screen">
+
+        <div class="quizWelcome">
+
+            <h2>🏆 Challenge Completed!</h2>
+
+            <h1 id="doDontScore"></h1>
+
+            <p id="doDontMessage"></p>
+
+            <button
+                type="button"
+                class="primary"
+                onclick="startDoDont()">
+                Try Again 🔄
+            </button>
+
+            <button
+                type="button"
+                class="backHome"
+                onclick="showScreen('home')">
+                🏠 Go Home
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- VIDEO -->
+    <section id="video" class="screen">
+
+        <button type="button" class="back" onclick="showScreen('home')">
+            ← Back
         </button>
 
-        <p id="phishingResult"></p>
+        <h2>🎥 Watch & Learn</h2>
 
-    </div>
+        <div class="card">
 
-</section>
+            <h3>Cyber Awareness on UPI Frauds</h3>
+
+            <p>
+                Watch this video to learn about UPI fraud
+                and online banking safety.
+            </p>
+
+            <div class="video-container">
+
+                <iframe
+                    src="https://www.youtube.com/embed/vBH4nrJtKiI"
+                    title="Cyber Awareness on UPI Frauds"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💡 What Did You Learn?</h3>
+
+            <p>🔒 Never share your OTP, PIN, or password.</p>
+            <p>📱 Use official banking applications.</p>
+            <p>🔗 Do not click suspicious links.</p>
+            <p>☎️ Be careful of unknown callers.</p>
+
+        </div>
+
+    </section>
 
 
-<!-- NEW: SAFE OR UNSAFE -->
-<section id="safeUnsafeActivity" class="screen">
+    <!-- QUIZ MENU -->
+    <section id="quizMenu" class="screen">
 
-    <button class="back-btn" onclick="showScreen('activities')">
-        ← Back
-    </button>
-
-    <h2>🛡️ Safe or Unsafe</h2>
-
-    <div class="activity-card">
-
-        <p>
-            Someone asks for your ATM PIN to "verify your bank account."
-        </p>
-
-        <p>
-            Is this safe or unsafe?
-        </p>
-
-        <button onclick="checkSafeUnsafeActivity('unsafe')">
-            🚨 Unsafe
+        <button type="button" class="back" onclick="showScreen('home')">
+            ← Back
         </button>
 
-        <button onclick="checkSafeUnsafeActivity('safe')">
-            ✅ Safe
+        <div class="quizWelcome">
+
+            <h2>📝 Online Banking Quiz</h2>
+
+            <p>Test what you have learned!</p>
+
+            <p>You will answer 5 questions.</p>
+
+            <button
+                type="button"
+                class="primary"
+                onclick="startQuiz()">
+                Start Quiz ▶
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="screen">
+
+        <button
+            type="button"
+            class="back"
+            onclick="exitQuiz()">
+            ← Exit Quiz
         </button>
 
-        <p id="safeUnsafeResult"></p>
+        <div class="quizBox">
 
-    </div>
+            <p id="questionNumber"></p>
 
-</section>
+            <h2 id="quizQuestion"></h2>
 
+            <div id="quizOptions"></div>
 
-<!-- DO & DON'T -->
-<section id="dosDont" class="screen">
+            <button
+                type="button"
+                id="nextButton"
+                class="primary"
+                onclick="nextQuestion()">
+                Next →
+            </button>
 
-    <button class="back-btn" onclick="showScreen('home')">
-        ← Back
-    </button>
+        </div>
 
-    <h2>✅ Do & Don't</h2>
+    </section>
 
-    <div class="info-card">
 
-        <h3>✅ DO</h3>
+    <!-- QUIZ RESULT -->
+    <section id="result" class="screen">
 
-        <ul>
-            <li>Use official banking apps.</li>
-            <li>Check the receiver before payment.</li>
-            <li>Keep passwords private.</li>
-            <li>Enable security features.</li>
-            <li>Report suspicious transactions.</li>
-        </ul>
+        <div class="quizWelcome">
 
-    </div>
+            <h2>🏆 Quiz Completed!</h2>
 
-    <div class="info-card">
+            <h1 id="finalScore"></h1>
 
-        <h3>❌ DON'T</h3>
+            <p id="scoreMessage"></p>
 
-        <ul>
-            <li>Don't share OTP.</li>
-            <li>Don't share ATM PIN.</li>
-            <li>Don't share UPI PIN.</li>
-            <li>Don't click unknown links.</li>
-            <li>Don't share CVV or passwords.</li>
-        </ul>
+            <button
+                type="button"
+                class="primary"
+                onclick="startQuiz()">
+                Try Again 🔄
+            </button>
 
-    </div>
+            <button
+                type="button"
+                class="backHome"
+                onclick="showScreen('home')">
+                🏠 Go Home
+            </button>
 
-</section>
+        </div>
 
+    </section>
 
-<!-- VIDEO -->
-<section id="video" class="screen">
 
-    <button class="back-btn" onclick="showScreen('home')">
-        ← Back
-    </button>
+    <!-- EMERGENCY -->
+    <section id="emergency" class="screen">
 
-    <h2>🎥 Watch & Learn</h2>
+        <button type="button" class="back" onclick="showScreen('home')">
+            ← Back
+        </button>
 
-    <div class="video-container">
+        <h2>🚨 Emergency Help</h2>
 
-        <iframe
-            src="https://www.youtube.com/embed/vBH4nrJtKiI"
-            title="Online Banking Safety"
-            allowfullscreen>
-        </iframe>
+        <div class="card emergencyCard">
 
-    </div>
+            <h3>Think You Have Been Scammed?</h3>
 
-</section>
+            <p>
+                Act quickly and stay calm.
+            </p>
 
+        </div>
 
-<!-- QUIZ MENU -->
-<section id="quizMenu" class="screen">
+        <div class="card">
 
-    <button class="back-btn" onclick="showScreen('home')">
-        ← Back
-    </button>
+            <h3>1️⃣ Contact Your Bank</h3>
 
-    <h2>🧠 Knowledge Quiz</h2>
+            <p>
+                Contact your bank using its official
+                customer support channel.
+            </p>
 
-    <p>
-        Test your knowledge about online banking safety.
-    </p>
+        </div>
 
-    <button onclick="startQuiz()">
-        ▶️ Start Quiz
-    </button>
+        <div class="card">
 
-</section>
+            <h3>2️⃣ Stop Sharing Information</h3>
 
+            <p>
+                Do not share any more information
+                with the suspected fraudster.
+            </p>
 
-<!-- QUIZ -->
-<section id="quiz" class="screen">
+        </div>
 
-    <button class="back-btn" onclick="showScreen('quizMenu')">
-        ← Back
-    </button>
+        <div class="card">
 
-    <h2 id="questionNumber">Question</h2>
+            <h3>3️⃣ Secure Your Accounts</h3>
 
-    <div id="questionText"></div>
+            <p>
+                Change passwords if you believe
+                your account information was exposed.
+            </p>
 
-    <div id="answers"></div>
+        </div>
 
-    <button id="nextButton" onclick="nextQuestion()">
-        Next
-    </button>
+        <div class="card">
 
-</section>
+            <h3>4️⃣ Report the Incident</h3>
 
+            <p>
+                Report the incident through appropriate
+                official banking and cybercrime channels.
+            </p>
 
-<!-- QUIZ RESULT -->
-<section id="quizResult" class="screen">
+        </div>
 
-    <h2>🎉 Quiz Completed</h2>
+    </section>
 
-    <p id="finalScore"></p>
 
-    <button onclick="showScreen('home')">
-        🏠 Back to Home
-    </button>
+    <!-- =====================================================
+         NEW ACTIVITIES JAVASCRIPT
+         Your existing script.js is NOT changed.
+    ====================================================== -->
 
-    <button onclick="startQuiz()">
-        🔄 Try Again
-    </button>
+    <script>
 
-</section>
+        function newActivityResult(id, message, correct) {
 
+            const result = document.getElementById(id);
 
-<!-- EMERGENCY -->
-<section id="emergency" class="screen">
+            result.innerHTML = message;
 
-    <button class="back-btn" onclick="showScreen('home')">
-        ← Back
-    </button>
+            if (correct) {
+                result.style.background = "#dff5e4";
+                result.style.color = "#217a36";
+                result.style.padding = "12px";
+                result.style.borderRadius = "10px";
+                result.style.marginTop = "12px";
+            } else {
+                result.style.background = "#ffe2e2";
+                result.style.color = "#b3261e";
+                result.style.padding = "12px";
+                result.style.borderRadius = "10px";
+                result.style.marginTop = "12px";
+            }
+        }
 
-    <h2>🆘 Emergency Help</h2>
 
-    <div class="info-card">
+        /* UPI SAFETY */
 
-        <h3>If You Suspect Fraud</h3>
+        function checkNewUPI(answer) {
 
-        <ol>
-            <li>Contact your bank immediately.</li>
-            <li>Block your card if required.</li>
-            <li>Secure your banking account.</li>
-            <li>Keep transaction details and screenshots.</li>
-            <li>Report the fraud through the appropriate official channel.</li>
-        </ol>
+            if (answer === "verify") {
 
-    </div>
+                newActivityResult(
+                    "newUPIResult",
+                    "🎉 Correct! Always verify an unknown payment request before approving it.",
+                    true
+                );
 
-    <div class="info-card">
+            } else {
 
-        <h3>Important</h3>
+                newActivityResult(
+                    "newUPIResult",
+                    "❌ Incorrect. Never approve an unknown request or enter your UPI PIN just to receive money.",
+                    false
+                );
 
-        <p>
-            Never share your OTP, ATM PIN, UPI PIN, CVV or password
-            while asking for help.
-        </p>
+            }
 
-    </div>
+        }
 
-</section>
 
+        /* OTP SAFETY */
 
-<!-- NEW ACTIVITY FUNCTIONS -->
-<script>
+        function checkNewOTP(answer) {
 
-function showActivityResult(id, message, correct) {
+            if (answer === "refuse") {
 
-    const result = document.getElementById(id);
+                newActivityResult(
+                    "newOTPResult",
+                    "🎉 Correct! Never share your OTP. Contact your bank through an official channel.",
+                    true
+                );
 
-    result.innerHTML = message;
+            } else {
 
-    if (correct) {
-        result.className = "correct-result";
-    } else {
-        result.className = "wrong-result";
-    }
-}
+                newActivityResult(
+                    "newOTPResult",
+                    "❌ Incorrect. Never share your OTP with anyone.",
+                    false
+                );
 
+            }
 
-/* UPI SAFETY */
+        }
 
-function checkUPISafety(answer) {
 
-    if (answer === "verify") {
+        /* PHISHING DETECTIVE */
 
-        showActivityResult(
-            "upiResult",
-            "✅ Correct! Always verify an unknown payment request before approving it.",
-            true
-        );
+        function checkNewPhishing(answer) {
 
-    } else {
+            if (answer === "official") {
 
-        showActivityResult(
-            "upiResult",
-            "❌ Incorrect. Never approve unknown payment requests or enter your UPI PIN just to receive money.",
-            false
-        );
+                newActivityResult(
+                    "newPhishingResult",
+                    "🎉 Correct! Verify suspicious messages through the official bank app or website.",
+                    true
+                );
 
-    }
-}
+            } else {
 
+                newActivityResult(
+                    "newPhishingResult",
+                    "❌ Incorrect. Do not click suspicious links or send banking information.",
+                    false
+                );
 
-/* OTP SAFETY */
+            }
 
-function checkOTPSafety(answer) {
+        }
 
-    if (answer === "refuse") {
 
-        showActivityResult(
-            "otpSafetyResult",
-            "✅ Correct! Never share your OTP. Contact your bank through an official channel.",
-            true
-        );
+        /* SAFE OR UNSAFE */
 
-    } else {
+        function checkNewSafeUnsafe(answer) {
 
-        showActivityResult(
-            "otpSafetyResult",
-            "❌ Incorrect. Never share your OTP with anyone.",
-            false
-        );
+            if (answer === "unsafe") {
 
-    }
-}
+                newActivityResult(
+                    "newSafeUnsafeResult",
+                    "🎉 Correct! Never share your ATM PIN with anyone.",
+                    true
+                );
 
+            } else {
 
-/* PHISHING DETECTIVE */
+                newActivityResult(
+                    "newSafeUnsafeResult",
+                    "❌ Incorrect. Asking for your ATM PIN is unsafe.",
+                    false
+                );
 
-function checkPhishingActivity(answer) {
+            }
 
-    if (answer === "official") {
+        }
 
-        showActivityResult(
-            "phishingResult",
-            "✅ Correct! Verify the message through the official bank app or website.",
-            true
-        );
+    </script>
 
-    } else {
 
-        showActivityResult(
-            "phishingResult",
-            "❌ Incorrect. Do not click suspicious links or provide banking information.",
-            false
-        );
-
-    }
-}
-
-
-/* SAFE OR UNSAFE */
-
-function checkSafeUnsafeActivity(answer) {
-
-    if (answer === "unsafe") {
-
-        showActivityResult(
-            "safeUnsafeResult",
-            "✅ Correct! Never share your ATM PIN with anyone.",
-            true
-        );
-
-    } else {
-
-        showActivityResult(
-            "safeUnsafeResult",
-            "❌ Incorrect. Asking for your ATM PIN is unsafe.",
-            false
-        );
-
-    }
-}
-
-</script>
-
-
-<!-- YOUR EXISTING JAVASCRIPT -->
-<script src="script.js"></script>
+    <!-- YOUR ORIGINAL JAVASCRIPT - DO NOT CHANGE -->
+    <script src="script.js"></script>
 
 </body>
 </html>
