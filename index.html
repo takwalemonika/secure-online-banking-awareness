@@ -126,65 +126,92 @@
             ← Back
         </button>
 
-        <h2>🔐 Password Safety</h2>
+        <h2>🔐 Password Security Checker</h2>
+
+        <p>
+            A strong password helps protect your online banking
+            account from unauthorized access.
+        </p>
+
+        <div class="password-box">
+
+            <label for="passwordInput">
+                Enter a password:
+            </label>
+
+            <div class="password-input">
+
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter your password"
+                    oninput="checkPasswordStrength()"
+                >
+
+                <button
+                    type="button"
+                    class="eye-btn"
+                    onclick="togglePassword()">
+                    👁️
+                </button>
+
+            </div>
+
+            <div id="strengthResult">
+                Password strength will appear here.
+            </div>
+
+            <h3>Password should contain:</h3>
+
+            <p id="lengthCheck">
+                ❌ At least 8 characters
+            </p>
+
+            <p id="upperCheck">
+                ❌ One uppercase letter (A-Z)
+            </p>
+
+            <p id="lowerCheck">
+                ❌ One lowercase letter (a-z)
+            </p>
+
+            <p id="numberCheck">
+                ❌ One number (0-9)
+            </p>
+
+            <p id="specialCheck">
+                ❌ One special character (!@#$%)
+            </p>
+
+            <div id="passwordAdvice"></div>
+
+        </div>
+
 
         <div class="card">
-            <h3>Why is a Password Important?</h3>
+
+            <h3>Important Password Rules 🛡️</h3>
+
+            <p>🔒 Never share your password with anyone.</p>
 
             <p>
-                Your password helps protect your account
-                from unauthorized access.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>❌ Avoid Easy Passwords</h3>
-
-            <p>❌ password123</p>
-            <p>❌ 12345678</p>
-            <p>❌ Your name</p>
-            <p>❌ Your birthday</p>
-        </div>
-
-        <div class="card">
-            <h3>💡 Use a Memorable Passphrase</h3>
-
-            <p>
-                Use several unrelated words that you can
-                remember.
+                🔄 Use different passwords for important accounts.
             </p>
 
             <p>
-                Example: Mango • River • Cloud
+                👀 Do not save passwords on public computers.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>🧪 Practice Password Checker</h3>
+            <p>
+                🚫 Do not use your name, birthday or mobile number
+                as your password.
+            </p>
 
-            <input
-                type="password"
-                id="passwordInput"
-                placeholder="Enter a practice password"
-            >
+            <p>
+                💡 Use a long passphrase with letters, numbers
+                and special characters.
+            </p>
 
-            <button
-                type="button"
-                class="primary"
-                onclick="checkPassword()"
-            >
-                Check Strength
-            </button>
-
-            <div id="passwordResult"></div>
-        </div>
-
-        <div class="card">
-            <h3>Important Rules 🛡️</h3>
-
-            <p>🔒 Never share your password.</p>
-            <p>🔄 Use different passwords for important accounts.</p>
-            <p>👀 Do not save passwords on public computers.</p>
         </div>
 
     </section>
@@ -279,7 +306,8 @@
     <!-- SPOT THE SCAM -->
     <section id="spotScam" class="screen">
 
-        <button type="button" class="back" onclick="showScreen('activityMenu')">
+        <button type="button" class="back"
+                onclick="showScreen('activityMenu')">
             ← Back
         </button>
 
@@ -297,16 +325,14 @@
             <button
                 type="button"
                 class="answer"
-                onclick="scamAnswer('safe')"
-            >
+                onclick="scamAnswer('safe')">
                 ✅ Safe Message
             </button>
 
             <button
                 type="button"
                 class="answer"
-                onclick="scamAnswer('scam')"
-            >
+                onclick="scamAnswer('scam')">
                 🚨 This is a Scam
             </button>
 
@@ -328,16 +354,14 @@
             <button
                 type="button"
                 class="answer"
-                onclick="otpAnswer('share')"
-            >
+                onclick="otpAnswer('share')">
                 Share OTP
             </button>
 
             <button
                 type="button"
                 class="answer"
-                onclick="otpAnswer('dontShare')"
-            >
+                onclick="otpAnswer('dontShare')">
                 Do Not Share OTP
             </button>
 
@@ -354,8 +378,7 @@
         <button
             type="button"
             class="back"
-            onclick="showScreen('activityMenu')"
-        >
+            onclick="showScreen('activityMenu')">
             ← Back
         </button>
 
@@ -376,16 +399,14 @@
                 <button
                     type="button"
                     class="do-button"
-                    onclick="answerDoDont('do')"
-                >
+                    onclick="answerDoDont('do')">
                     ✅ DO
                 </button>
 
                 <button
                     type="button"
                     class="dont-button"
-                    onclick="answerDoDont('dont')"
-                >
+                    onclick="answerDoDont('dont')">
                     ❌ DON'T
                 </button>
 
@@ -397,8 +418,7 @@
                 type="button"
                 id="doDontNext"
                 class="primary"
-                onclick="nextDoDont()"
-            >
+                onclick="nextDoDont()">
                 Next →
             </button>
 
@@ -421,16 +441,14 @@
             <button
                 type="button"
                 class="primary"
-                onclick="startDoDont()"
-            >
+                onclick="startDoDont()">
                 Try Again 🔄
             </button>
 
             <button
                 type="button"
                 class="backHome"
-                onclick="showScreen('home')"
-            >
+                onclick="showScreen('home')">
                 🏠 Go Home
             </button>
 
@@ -501,8 +519,7 @@
             <button
                 type="button"
                 class="primary"
-                onclick="startQuiz()"
-            >
+                onclick="startQuiz()">
                 Start Quiz ▶
             </button>
 
@@ -517,8 +534,7 @@
         <button
             type="button"
             class="back"
-            onclick="exitQuiz()"
-        >
+            onclick="exitQuiz()">
             ← Exit Quiz
         </button>
 
@@ -534,8 +550,7 @@
                 type="button"
                 id="nextButton"
                 class="primary"
-                onclick="nextQuestion()"
-            >
+                onclick="nextQuestion()">
                 Next →
             </button>
 
@@ -558,16 +573,14 @@
             <button
                 type="button"
                 class="primary"
-                onclick="startQuiz()"
-            >
+                onclick="startQuiz()">
                 Try Again 🔄
             </button>
 
             <button
                 type="button"
                 class="backHome"
-                onclick="showScreen('home')"
-            >
+                onclick="showScreen('home')">
                 🏠 Go Home
             </button>
 
@@ -596,44 +609,53 @@
         </div>
 
         <div class="card">
+
             <h3>1️⃣ Contact Your Bank</h3>
 
             <p>
                 Contact your bank using its official
                 customer support channel.
             </p>
+
         </div>
 
         <div class="card">
+
             <h3>2️⃣ Stop Sharing Information</h3>
 
             <p>
                 Do not share any more information
                 with the suspected fraudster.
             </p>
+
         </div>
 
         <div class="card">
+
             <h3>3️⃣ Secure Your Accounts</h3>
 
             <p>
                 Change passwords if you believe
                 your account information was exposed.
             </p>
+
         </div>
 
         <div class="card">
+
             <h3>4️⃣ Report the Incident</h3>
 
             <p>
                 Report the incident through appropriate
                 official banking and cybercrime channels.
             </p>
+
         </div>
 
     </section>
 
 
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
