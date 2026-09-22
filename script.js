@@ -36,74 +36,93 @@ function showScreen(screenId) {
    PASSWORD CHECKER
 ===================================================== */
 
-function checkPassword() {
+function togglePassword() {
 
-    const passwordInput =
-        document.getElementById("passwordInput");
+    const passwordInput = document.getElementById("passwordInput");
 
-    const result =
-        document.getElementById("passwordResult");
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+    } else {
+        passwordInput.type = "password";
+    }
+}
 
-    const password = passwordInput.value;
+
+function checkPasswordStrength() {
+
+    const password = document.getElementById("passwordInput").value;
+
+    const lengthCheck = document.getElementById("lengthCheck");
+    const upperCheck = document.getElementById("upperCheck");
+    const lowerCheck = document.getElementById("lowerCheck");
+    const numberCheck = document.getElementById("numberCheck");
+    const specialCheck = document.getElementById("specialCheck");
+
+    const strengthResult = document.getElementById("strengthResult");
+    const advice = document.getElementById("passwordAdvice");
+
+    const hasLength = password.length >= 8;
+    const hasUpper = /[A-Z]/.test(password);
+    const hasLower = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    lengthCheck.innerHTML =
+        (hasLength ? "✅" : "❌") + " At least 8 characters";
+
+    upperCheck.innerHTML =
+        (hasUpper ? "✅" : "❌") + " One uppercase letter (A-Z)";
+
+    lowerCheck.innerHTML =
+        (hasLower ? "✅" : "❌") + " One lowercase letter (a-z)";
+
+    numberCheck.innerHTML =
+        (hasNumber ? "✅" : "❌") + " One number (0-9)";
+
+    specialCheck.innerHTML =
+        (hasSpecial ? "✅" : "❌") + " One special character (!@#$%)";
+
 
     let score = 0;
 
-    if (password.length >= 12) {
-        score++;
-    }
-
-    if (/[A-Z]/.test(password)) {
-        score++;
-    }
-
-    if (/[a-z]/.test(password)) {
-        score++;
-    }
-
-    if (/[0-9]/.test(password)) {
-        score++;
-    }
-
-    if (/[^A-Za-z0-9]/.test(password)) {
-        score++;
-    }
+    if (hasLength) score++;
+    if (hasUpper) score++;
+    if (hasLower) score++;
+    if (hasNumber) score++;
+    if (hasSpecial) score++;
 
 
     if (password.length === 0) {
 
-        result.innerHTML =
-            "⚠️ Please enter a practice password.";
+        strengthResult.innerHTML =
+            "Password strength will appear here.";
 
-        result.style.color = "#d32f2f";
+        advice.innerHTML = "";
 
-        return;
-    }
+    } else if (score <= 2) {
 
+        strengthResult.innerHTML =
+            "🔴 Password Strength: WEAK";
 
-    if (score <= 2) {
+        advice.innerHTML =
+            "💡 Try adding uppercase letters, numbers, special characters and making the password longer.";
 
-        result.innerHTML =
-            "🔴 Weak password. Make it longer and less predictable.";
+    } else if (score <= 4) {
 
-        result.style.color = "#d32f2f";
+        strengthResult.innerHTML =
+            "🟠 Password Strength: MEDIUM";
 
-    }
+        advice.innerHTML =
+            "💡 Your password is okay, but you can make it stronger.";
 
-    else if (score <= 4) {
+    } else {
 
-        result.innerHTML =
-            "🟠 Medium strength. Make it longer and unique.";
+        strengthResult.innerHTML =
+            "🟢 Password Strength: STRONG";
 
-        result.style.color = "#ef6c00";
+        advice.innerHTML =
+            "✅ Good! This password meets the basic security requirements.";
 
-    }
-
-    else {
-
-        result.innerHTML =
-            "🟢 Stronger password! Keep it unique and never share it.";
-
-        result.style.color = "#2e7d32";
     }
 }
 
