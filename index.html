@@ -589,43 +589,118 @@
             ← Back
         </button>
 
-        <h2>🛡️ Safe or Unsafe</h2>
-
-        <div class="card">
-
-            <h3>Situation</h3>
-
-            <p>
-                Someone asks for your ATM PIN to
-                "verify your bank account."
-            </p>
-
-            <p>
-                Is this safe or unsafe?
-            </p>
-
-            <button
-                type="button"
-                class="answer"
-                onclick="checkNewSafeUnsafe('unsafe')">
-                🚨 Unsafe
-            </button>
-
-            <button
-                type="button"
-                class="answer"
-                onclick="checkNewSafeUnsafe('safe')">
-                ✅ Safe
-            </button>
-
-            <div id="newSafeUnsafeResult"></div>
-
-        </div>
-
-    </section>
+        <!-- SAFE OR UNSAFE ACTIVITY -->
 
 
-    <!-- DO OR DON'T -->
+    <h2>🛡️ Safe or Unsafe?</h2>
+
+    <p class="activity-intro">
+        Read each situation and choose the correct action.
+    </p>
+
+    <!-- Situation 1 -->
+    <div class="card">
+        <h3>Situation 1</h3>
+
+        <p>
+            Someone asks for your ATM PIN to “verify your bank account”.
+        </p>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('unsafe1', this)">
+            ❌ Unsafe
+        </button>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('safe1', this)">
+            ✅ Safe
+        </button>
+
+        <div id="safeUnsafeResult1" class="activity-result"></div>
+    </div>
+
+
+    <!-- Situation 2 -->
+    <div class="card">
+        <h3>Situation 2</h3>
+
+        <p>
+            You receive a UPI payment request from an unknown person.
+            They ask you to enter your UPI PIN to receive money.
+        </p>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('unsafe2', this)">
+            ❌ Unsafe
+        </button>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('safe2', this)">
+            ✅ Safe
+        </button>
+
+        <div id="safeUnsafeResult2" class="activity-result"></div>
+    </div>
+
+
+    <!-- Situation 3 -->
+    <div class="card">
+        <h3>Situation 3</h3>
+
+        <p>
+            You receive an SMS saying your bank KYC will expire and
+            asking you to click a link to update your details.
+        </p>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('unsafe3', this)">
+            ❌ Unsafe
+        </button>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('safe3', this)">
+            ✅ Safe
+        </button>
+
+        <div id="safeUnsafeResult3" class="activity-result"></div>
+    </div>
+
+
+    <!-- Situation 4 -->
+    <div class="card">
+        <h3>Situation 4</h3>
+
+        <p>
+            Your mobile phone is lost. You immediately contact your bank
+            and take steps to secure your banking account.
+        </p>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('unsafe4', this)">
+            ❌ Unsafe
+        </button>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('safe4', this)">
+            ✅ Safe
+        </button>
+
+        <div id="safeUnsafeResult4" class="activity-result"></div>
+    </div>
+
+
+    <!-- Situation 5 -->
+    <div class="card">
+        <h3>Situation 5</h3>
+
+        <p>
+            You notice an unknown transaction in your bank account
+            and immediately report it to your bank.
+        </p>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('unsafe5', this)">
+            ❌ Unsafe
+        </button>
+
+        <button class="answer" onclick="checkNewSafeUnsafe('safe5', this)">
+            ✅ Safe
+        </button>
+
+        <div id="safeUnsafeResult5" class="activity-result"></div>
+    </div>
+ <!-- DO OR DON'T -->
     <section id="dosDont" class="screen">
 
         <button
