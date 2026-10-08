@@ -514,10 +514,19 @@ input:focus {
    NEW ACTIVITY RESULTS
 ========================= */
 
+/* =========================
+   NEW ACTIVITY RESULTS
+========================= */
+
 #newUPIResult,
 #newOTPResult,
 #newPhishingResult,
-#newSafeUnsafeResult {
+#newSafeUnsafeResult,
+#safeUnsafeResult1,
+#safeUnsafeResult2,
+#safeUnsafeResult3,
+#safeUnsafeResult4,
+#safeUnsafeResult5 {
     margin-top: 15px;
 
     padding: 13px;
